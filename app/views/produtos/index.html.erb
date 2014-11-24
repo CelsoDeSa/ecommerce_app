@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+      <% @produtos.each do |produto| %>
+        <div class="col-sm-6 col-md-4">
+          <div id="produto" class="thumbnail">
+
+            <%= produto.foto.present? ? image_tag(produto.foto) : image_tag("test.jpg")  %>
+
+            <div class="caption">
+              <p>
+                <%= produto.descricao %>
+              </p>
+              <p>
+                <%= produto.preco %>
+              </p>
+              <p>
+                <%= link_to 'Show', produto %> |
+                <%= link_to 'Edit', edit_produto_path(produto) %> |
+                <%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
+
+  <br>
+
+  <%= form_tag import_produtos_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+
+  <%= link_to 'New Produto', new_produto_path %>
+</div>

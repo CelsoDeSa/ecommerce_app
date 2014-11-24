@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cell Sul Atacado</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <div class="container">
+		    <div class="navbar" role="navigation">
+
+          <%= link_to image_tag("csa.jpg", class: "navbar-header"), root_path %>
+
+          <ul id="skype" class="nav navbar-nav">
+            <li class="thumbnail">
+              <h2>
+                SKYPE - Online Agora!
+              </h2>
+              <h3 class="text-center">
+                blablabla@msn.com
+              </h3>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+          <ul class="nav navbar-nav">
+            <li><a>capinhas</a></li>
+            <li><a>adesivos</a></li>
+            <li><a>baterias</a></li>
+            <li><a>audio</a></li>
+          </ul>
+    </div>
+  </nav>
+
+
+
+  <div id="wrap">
+    <%= yield %>
+  </div>
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+			<br>
+				<div class="col-md-1"></div>
+				<div class="col-md-4">
+					<span>about</span>
+				</div>
+				<div class="col-md-4">
+					<span>tools</span>
+				</div>
+				<div class="col-md-3">
+					<span>privay</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
