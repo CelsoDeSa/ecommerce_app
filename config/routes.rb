@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :produtos do
     collection { post :import }
     collection { get :search }

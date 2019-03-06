@@ -38,6 +38,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'thin'
 gem 'bootstrap-sass'
+gem 'foundation-icons-sass-rails'
 gem 'roo'
 gem 'pg_search'
+gem 'devise'
+gem 'cancancan', '~> 1.9'

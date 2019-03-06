@@ -50,7 +50,12 @@
     </nav>
   </div>
 
-
+  <% if notice || alert %>
+    <div class="container">
+      <%= notice %>
+      <%= alert %>
+    </div>
+  <% end %>
 
   <div id="wrap">
     <%= yield %>

@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-2 col-md-1">
+    <div id="marcas" class="btn-group-vertical" role="group" aria-label="...">
+
+      <%= link_to search_produtos_path(query: "samsung"), {class: "btn btn-default"} do %>
+          <strong>Samsung</strong>
+      <% end %>
+
+      <%= link_to search_produtos_path(query: "mot"), {class: "btn btn-default"} do %>
+          <strong>Motorola</strong>
+      <% end %>
+
+      <%= link_to search_produtos_path(query: "iphone"), {class: "btn btn-default"} do %>
+          <strong>Apple</strong>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="col-sm-10 col-md-11">
+
+    <div class="col-sm-10 col-md-12">
+      <div class="pull-right">
+  			<% if user_signed_in? %>
+  			  Logged in as <strong><%= current_user.email %></strong>.
+  			  <%= link_to 'Edit profile', edit_user_registration_path %> |
+  			  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  			<% else %>
+  			  <%= link_to "Sign up", new_user_registration_path %>
+  			  <%= link_to "Login", new_user_session_path %>
+  			<% end %>
+      </div>
+    </div>
+
+    <% @produtos.each do |produto| %>
+      <div class="col-sm-6 col-md-4">
+        <div id="produto" class="thumbnail">
+
+          <%= produto.foto.present? ? image_tag(produto.foto) : image_tag("test.jpg")  %>
+
+          <div class="caption">
+            <h4>
+              <%= produto.descricao %>
+            </h4>
+            <button type="button" class="btn btn-warning btn-lg btn-block active">
+              <% if can? :read, produto %>
+                <%= "R"+number_to_currency(produto.preco) %>
+              <% else %>
+                cadastre-se ou peça pelo skype
+              <% end %>
+            </button>
+            <p>
+              <% if can? :update, produto %>
+                <div class="well well-small actions">
+                  <%= link_to ' editar',
+                          edit_produto_path(produto), :class => 'btn btn-primary' %>
+              <% end %>
+              <% if can? :destroy, produto %>
+                <%= link_to ' deletar',
+                          produto, method: 'delete', :data => { :confirm => 'Tem certeza?' }, :class => 'btn btn-danger' %>
+                </div>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

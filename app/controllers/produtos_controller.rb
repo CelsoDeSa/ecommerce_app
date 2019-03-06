@@ -1,6 +1,8 @@
 class ProdutosController < ApplicationController
   before_action :set_produto, only: [:show, :edit, :update, :destroy]
 
+  load_and_authorize_resource except: [:index, :search, :show]
+
   # GET /produtos
   # GET /produtos.json
   def index
