@@ -6,17 +6,24 @@ class ProdutosController < ApplicationController
   # GET /produtos
   # GET /produtos.json
   def index
-    @produtos = Produto.all
+    @produtos = Produto.page(params[:page]).per_page(6)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def search
     if params[:query]
       @query = params[:query]
       @produtos = Produto.search(@query) #.limit(10)
+      #@produtos = @produtos.page(params[:page]).per_page(6) #not possible yet
     end
 
     respond_to do |format|
       format.html
+      format.js
     end
   end
 

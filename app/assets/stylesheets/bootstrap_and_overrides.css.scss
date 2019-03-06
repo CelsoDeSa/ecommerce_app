@@ -37,6 +37,15 @@ nav.navbar {
   li a:hover {
     background-color: black;
   }
+
+  li#cadastro a {
+    background-color: #d9534f;
+  }
+
+  //.affix {
+  //  top: 0;
+  //  position: fixed;
+  //}
 }
 
 #marcas.btn-group-vertical {
@@ -51,6 +60,11 @@ nav.navbar {
   strong {
     color: #bbb;
   }
+}
+
+.affix {
+  top: 15px;
+  position: fixed;
 }
 
 #searchbar {

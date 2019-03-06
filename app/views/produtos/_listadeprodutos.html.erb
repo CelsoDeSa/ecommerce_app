@@ -1,109 +1,33 @@
-<div class="row">
-  <div class="col-sm-2 col-md-1">
-    <div id="marcas" class="btn-group-vertical" role="group" aria-label="...">
+<% @produtos.each do |produto| %>
+  <div class="col-sm-6 col-md-4">
+    <div id="produto" class="thumbnail">
 
-      <%= link_to search_produtos_path(query: "samsung"), {class: "btn btn-default"} do %>
-          <strong>Samsung</strong>
-      <% end %>
+      <%= produto.foto.present? ? image_tag(produto.foto) : image_tag("test.jpg")  %>
 
-      <%= link_to search_produtos_path(query: "mot"), {class: "btn btn-default"} do %>
-          <strong>Motorola</strong>
-      <% end %>
-
-      <%= link_to search_produtos_path(query: "iphone"), {class: "btn btn-default"} do %>
-          <strong>Apple</strong>
-      <% end %>
-
-      <%= link_to search_produtos_path(query: "LG"), {class: "btn btn-default"} do %>
-          <strong>LG</strong>
-      <% end %>
-
-      <%= link_to search_produtos_path(query: "Nokia"), {class: "btn btn-default"} do %>
-          <strong>Nokia</strong>
-      <% end %>
-
-      <%= link_to search_produtos_path(query: "Sony"), {class: "btn btn-default"} do %>
-          <strong>Sony</strong>
-      <% end %>
-
-    </div>
-  </div>
-
-  <div class="col-sm-10 col-md-11">
-    <div id="searchbar" class="col-sm-10 col-md-12">
-        <%= form_tag search_produtos_path, class: "form-search", method: :get do %>
-          <div class="input-group">
-
-            <%= text_field_tag :query, params[:query], class: "form-control search-query",  placeholder: "..." %>
-
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-success">
-                    <i class="glyphicon glyphicon-search"></i>
-                  </button>
-
-
-                  <% if user_signed_in? %>
-                    <span class="btn-group" role="group">
-                      <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <strong><%= current_user.email %></strong>
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><%= link_to "Trocar Senha", edit_user_registration_path %></li>
-                        <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-                      </ul>
-                    </span>
-
-                  <% else %>
-                    <span class="btn-group" role="group">
-                        <button class="btn btn-danger active dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                          <strong>Cadastre-se</strong>
-                          <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><%= link_to "Cadastre-se",new_user_registration_path %></li>
-                          <li><%= link_to "Login", new_user_session_path %></li>
-                        </ul>
-                    </span>
-                  <% end %>
-              </span>
-           </div>
-        <% end %>
-    </div>
-
-    <% @produtos.each do |produto| %>
-      <div class="col-sm-6 col-md-4">
-        <div id="produto" class="thumbnail">
-
-          <%= produto.foto.present? ? image_tag(produto.foto) : image_tag("test.jpg")  %>
-
-          <div class="caption">
-            <h4>
-              <%= produto.descricao %>
-            </h4>
-            <button type="button" class="btn btn-warning btn-lg btn-block active">
-              <% if can? :read, produto %>
-                <%= "R"+number_to_currency(produto.preco) %>
-              <% else %>
-                <%= link_to "Preço: cadastre-se ou pelo skype", new_user_registration_path %>
-              <% end %>
-            </button>
-            <p>
-              <% if can? :update, produto %>
-                <div class="well well-small actions">
-                  <%= link_to ' editar',
-                          edit_produto_path(produto), :class => 'btn btn-primary' %>
-              <% end %>
-              <% if can? :destroy, produto %>
-                <%= link_to ' deletar',
-                          produto, method: 'delete', :data => { :confirm => 'Tem certeza?' }, :class => 'btn btn-danger' %>
-                </div>
-              <% end %>
-            </p>
-          </div>
-        </div>
+      <div class="caption">
+        <h4>
+          <%= produto.descricao %>
+        </h4>
+        <button type="button" class="btn btn-warning btn-lg btn-block active">
+          <% if can? :read, produto %>
+            <%= "R"+number_to_currency(produto.preco) %>
+          <% else %>
+            <%= link_to "Preço: cadastre-se ou pelo skype", new_user_registration_path %>
+          <% end %>
+        </button>
+        <p>
+          <% if can? :update, produto %>
+            <div class="well well-small actions">
+              <%= link_to ' editar',
+                      edit_produto_path(produto), :class => 'btn btn-primary' %>
+          <% end %>
+          <% if can? :destroy, produto %>
+            <%= link_to ' deletar',
+                      produto, method: 'delete', :data => { :confirm => 'Tem certeza?' }, :class => 'btn btn-danger' %>
+            </div>
+          <% end %>
+        </p>
       </div>
-    <% end %>
+    </div>
   </div>
-
-</div>
+<% end %>

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Cell Sul Atacado</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -48,6 +48,7 @@
               <li><%= link_to (raw("<strong>pen drives</strong>")), search_produtos_path(query: "pen drive") %></li>
               <li><%= link_to (raw("<strong>touch</strong>")), search_produtos_path(query: "touch") %></li>
               <li><%= link_to (raw("<strong>alcool isopropílico</strong>")), search_produtos_path(query: "alcool isopropilico") %></li>
+              <li id="cadastro"><%= link_to (raw("<strong>Cadastre-se</strong>")),new_user_registration_path %></li>
             </ul>
       </div>
     </nav>
