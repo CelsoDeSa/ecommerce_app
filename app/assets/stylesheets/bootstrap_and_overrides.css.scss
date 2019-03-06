@@ -2,16 +2,23 @@
 //$iconSpritePath: image-path('glyphicons-halflings.png');
 //$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
 
-// $navbarBackground: #398439;
-$navbarBackgroundHighlight: #077d9f; //#0e0e0e //#0093c9
-$navbarText: #eee;
-$navbarLinkColor: #eee;
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 img.navbar-header {
     margin-top: 20px;
+}
+
+nav.navbar {
+  background: #7abf4b;
+
+  li a {
+    color: #ffffff;
+  }
+
+  li a:hover {
+    background-color: black;
+  }
 }
 
 ul#skype.nav.navbar-nav {
@@ -28,6 +35,10 @@ ul#skype.nav.navbar-nav {
   img {
     width: 242px;
     height: 200px
+  }
+
+  h4 {
+    min-height: 38px;
   }
 }
 
