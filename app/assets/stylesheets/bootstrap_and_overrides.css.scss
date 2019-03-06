@@ -21,7 +21,7 @@ ul#skype.nav.navbar-nav {
       margin: 0 15px 0 15px;
     }
 
-    a {
+    a, small {
       color: white;
     }
   }
@@ -59,7 +59,7 @@ nav.navbar {
 
 #produto.thumbnail {
   img {
-    width: 242px;
+    //width: 242px;
     height: 200px
   }
 

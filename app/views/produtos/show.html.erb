@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container center-block">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Foto:</strong>
-  <%= @produto.foto %>
-</p>
+  <p>
+    <strong>Foto:</strong>
+    <%= @produto.foto %>
+  </p>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @produto.descricao %>
-</p>
+  <p>
+    <strong>Descrição:</strong>
+    <%= @produto.descricao %>
+  </p>
 
-<p>
-  <strong>Preco:</strong>
-  <%= @produto.preco %>
-</p>
+  <p>
+    <strong>Preço:</strong>
+    <%= @produto.preco %>
+  </p>
 
-<%= link_to 'Edit', edit_produto_path(@produto) %> |
-<%= link_to 'Back', produtos_path %>
+  <%= link_to 'Editar', edit_produto_path(@produto) %> |
+  <%= link_to 'Voltar', produtos_path %>
+</div>

@@ -17,11 +17,11 @@
             <li class="thumbnail">
               <h3>
                 <span class="fi-social-skype" aria-hidden="true"></span>
-                blablabla@msn.com
+                <small><strong>cellsulatacado@hotmail.com </strong></small>
               </h3>
               <h3>
                 <span class="fi-social-facebook" aria-hidden="true"></span>
-                <a href="http://facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.facebook.com/diego.nk.98" target="_blank">Facebook</a>
               </h3>
               <h3>
                 <span class="fi-telephone" aria-hidden="true"></span>
@@ -38,7 +38,7 @@
       <div class="container">
 
             <ul class="nav navbar-nav">
-              <li><a><strong>capinhas</strong></a></li>
+              <li><%= link_to (raw("<strong>capinhas</strong>")), search_produtos_path(query: "capinha") %></li>
               <li><%= link_to (raw("<strong>adesivos</strong>")), search_produtos_path(query: "adesivo") %></li>
               <li><%= link_to (raw("<strong>baterias</strong>")), search_produtos_path(query: "bat") %></li>
               <li><%= link_to (raw("<strong>audio</strong>")), search_produtos_path(query: "audio") %></li>
@@ -86,7 +86,7 @@
 					<span>tools</span>
 				</div>
 				<div class="col-md-3">
-					<span>privay</span>
+					<span>privacy</span>
 				</div>
 			</div>
 		</div>
