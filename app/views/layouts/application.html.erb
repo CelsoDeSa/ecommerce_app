@@ -34,17 +34,17 @@
 
             <ul class="nav navbar-nav">
               <li><a><strong>capinhas</strong></a></li>
-              <li><a><strong>adesivos</strong></a></li>
-              <li><a><strong>baterias</strong></a></li>
-              <li><a><strong>audio</strong></a></li>
-              <li><a><strong>carregadores</strong></a></li>
-              <li><a><strong>displays</strong></a></li>
-              <li><a><strong>microfones</strong></a></li>
-              <li><a><strong>películas</strong></a></li>
-              <li><a><strong>pen drives</strong></a></li>
-              <li><a><strong>touch</strong></a></li>
-              <li><a><strong>tpu</strong></a></li>
-              <li><a><strong>alcool isopropílico</strong></a></li>
+              <li><%= link_to (raw("<strong>adesivos</strong>")), search_produtos_path(query: "adesivo") %></li>
+              <li><%= link_to (raw("<strong>baterias</strong>")), search_produtos_path(query: "bat") %></li>
+              <li><%= link_to (raw("<strong>audio</strong>")), search_produtos_path(query: "audio") %></li>
+              <li><%= link_to (raw("<strong>carregadores</strong>")), search_produtos_path(query: "carregador") %></li>
+              <li><%= link_to (raw("<strong>displays</strong>")), search_produtos_path(query: "display") %></li>
+              <li><%= link_to (raw("<strong>microfones</strong>")), search_produtos_path(query: "microfone") %></li>
+              <li><%= link_to (raw("<strong>películas</strong>")), search_produtos_path(query: "pelicula") %></li>
+              <li><%= link_to (raw("<strong>pen drives</strong>")), search_produtos_path(query: "pen drive") %></li>
+              <li><%= link_to (raw("<strong>touch</strong>")), search_produtos_path(query: "touch") %></li>
+              <li><%= link_to (raw("<strong>TPU</strong>")), search_produtos_path(query: "tpu") %></li>
+              <li><%= link_to (raw("<strong>alcool isopropílico</strong>")), search_produtos_path(query: "alcool isopropilico") %></li>
             </ul>
       </div>
     </nav>

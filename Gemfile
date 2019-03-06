@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass'
 gem 'roo'
+gem 'pg_search'

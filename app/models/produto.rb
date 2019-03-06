@@ -1,4 +1,12 @@
 class Produto < ActiveRecord::Base
+  include PgSearch
+    pg_search_scope :search,
+                    against: :descricao,
+                    using: {
+                      tsearch: {
+                        dictionary: "portuguese"
+                      }
+                    }
 
   def self.import(file)
     spreadsheet = open_spreadsheet(file)

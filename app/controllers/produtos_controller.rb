@@ -7,6 +7,17 @@ class ProdutosController < ApplicationController
     @produtos = Produto.all
   end
 
+  def search
+    if params[:query]
+      @query = params[:query]
+      @produtos = Produto.search(@query) #.limit(10)
+    end
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /produtos/1
   # GET /produtos/1.json
   def show
