@@ -3,11 +3,12 @@
   <%= render 'listadeprodutos' %>
 
   <br>
-
+<% if can? :update, produto %>
   <%= form_tag import_produtos_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import" %>
   <% end %>
 
   <%= link_to 'New Produto', new_produto_path %>
+<% end %>
 </div>
