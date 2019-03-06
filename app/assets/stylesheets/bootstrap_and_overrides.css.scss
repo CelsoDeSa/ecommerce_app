@@ -2,6 +2,7 @@
 //$iconSpritePath: image-path('glyphicons-halflings.png');
 //$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
 
+@import 'foundation-icons';
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -15,9 +16,13 @@ ul#skype.nav.navbar-nav {
     background-color: #ec971f;
     border-color: #d58512;
 
-    h2, h3 {
+    h2, h3, h4, h5, h6 {
       color: white;
       margin: 0 15px 0 15px;
+    }
+
+    a {
+      color: white;
     }
   }
 }
@@ -48,6 +53,10 @@ nav.navbar {
   }
 }
 
+#searchbar {
+  margin-bottom: 15px;
+}
+
 #produto.thumbnail {
   img {
     width: 242px;
@@ -56,6 +65,10 @@ nav.navbar {
 
   h4 {
     min-height: 38px;
+  }
+
+  a {
+    color: white;
   }
 }
 

@@ -1,0 +1,41 @@
+<div class="container center-block">
+  <h2>Editar <%= resource_name.to_s.humanize %></h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "senha" %> <i>(deixe em branco se não quiser mudá-la)</i><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "confirme a senha" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label "senha atual" %> <i>(precisamos de sua senha atual para confirmar as mudanças)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+
+  <h3>Cancelar meu cadastro</h3>
+
+  <p>Insatisfeito? <%= button_to "Cancelar cadastro", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+
+  <%= link_to "Voltar", :back %>
+</div>

@@ -15,12 +15,17 @@
 
           <ul id="skype" class="nav navbar-nav">
             <li class="thumbnail">
-              <h2 class="text-center">
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-                SKYPE - Online!
-              </h2>
-              <h3 class="text-center">
+              <h3>
+                <span class="fi-social-skype" aria-hidden="true"></span>
                 blablabla@msn.com
+              </h3>
+              <h3>
+                <span class="fi-social-facebook" aria-hidden="true"></span>
+                <a href="http://facebook.com" target="_blank">Facebook</a>
+              </h3>
+              <h3>
+                <span class="fi-telephone" aria-hidden="true"></span>
+                047 3375 00 00
               </h3>
             </li>
           </ul>
@@ -51,9 +56,17 @@
   </div>
 
   <% if notice || alert %>
-    <div class="container">
-      <%= notice %>
-      <%= alert %>
+    <div class="container text-center">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%=(name == 'notice' ? 'success' : 'danger')%>" role="alert">
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span><span class="sr-only">
+            Close
+            </span>
+          </button>
+          <%= msg %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 
