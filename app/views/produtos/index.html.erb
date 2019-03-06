@@ -7,12 +7,4 @@
     <%= will_paginate @produtos %>
   </div>
 
-  <% if can? :create, @produtos %>
-    <%= form_tag import_produtos_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag "Importar arquivos" %>
-    <% end %>
-
-    <%= link_to 'Adicionar Produto', new_produto_path %>
-  <% end %>
 </div>

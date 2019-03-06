@@ -1,5 +1,27 @@
-<h1>Novo produto</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
 
-<%= render 'form' %>
+		<div class="col-md-4">
+			<div class="thumbnail">
 
-<%= link_to 'Voltar', root_path %>
+        <h1 class="text-center text-success">Novo Produto</h1>
+
+        <%= render 'form' %>
+
+        <h2 class="text-center text-success">Ou Upload Arquivo XML</h2>
+
+        <%= form_tag import_produtos_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <br>
+          <%= submit_tag "Importar arquivos" %>
+        <% end %>
+
+        <br>
+        <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+		<div class="col-md-4"></div>
+	</div>
+</div>
