@@ -21,7 +21,7 @@ class Produto < ActiveRecord::Base
     end
   end
 
-    def self.deduplicate #procurava por duplicatas e as destruir
+  def self.deduplicate #procurava por duplicatas e as destruir
      #find all models and group them on keys which should be common
     grouped = all.group_by{|model| model.descricao }
     grouped.values.each do |duplicates|

@@ -5,8 +5,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-img.navbar-header {
+img.navbar-header, ul#skype.nav.navbar-nav {
     margin-top: 20px;
+}
+
+
+ul#skype.nav.navbar-nav {
+  li.thumbnail {
+    background-color: #ec971f;
+    border-color: #d58512;
+
+    h2, h3 {
+      color: white;
+      margin: 0 15px 0 15px;
+    }
+  }
 }
 
 nav.navbar {
@@ -21,13 +34,17 @@ nav.navbar {
   }
 }
 
-ul#skype.nav.navbar-nav {
-  li.thumbnail {
-    background-color: #ff8a00;
-    border-color: #e67c00;
-    h2, h3 {
+#marcas.btn-group-vertical {
+  button:hover {
+    background-color: #ec971f;
+
+    strong {
       color: white;
     }
+  }
+
+  strong {
+    color: #bbb;
   }
 }
 
